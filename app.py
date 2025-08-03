@@ -4,7 +4,7 @@ import json
 
 app = Flask(__name__)
 producer = KafkaProducer(
-    bootstrap_servers='kafka:9092',
+    bootstrap_servers='my-kafka-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092',
     value_serializer=lambda v: json.dumps(v).encode('utf-8')
 )
 
